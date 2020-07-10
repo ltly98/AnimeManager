@@ -1,0 +1,52 @@
+﻿<Window x:Class="Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Manager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="0" Background="#2f3542" Foreground="White" FontSize="16" BorderThickness="0">
+
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <StackPanel Height="50" Orientation="Horizontal" Name="Container">
+                                        <Rectangle Fill="#ffa502" Width="10" Visibility="Hidden" Name="LeftLight"></Rectangle>
+                                        <ContentPresenter VerticalAlignment="Center" Margin="30 0 0 0"></ContentPresenter>
+                                    </StackPanel>
+
+                                    <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Visibility" Value="Visible" TargetName="LeftLight"></Setter>
+                                        <Setter Property="Background" Value="#eccc68" TargetName="Container"></Setter>
+                                    </Trigger>
+
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Visibility" Value="Visible" TargetName="LeftLight"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+
+            <Rectangle Height="50"></Rectangle>
+            <ListBoxItem Selected="ListBoxItem_Selected" Content="番剧总览" IsSelected="True"></ListBoxItem>
+            <ListBoxItem Selected="ListBoxItem_Selected" Content="番剧评价"></ListBoxItem>
+            <ListBoxItem Selected="ListBoxItem_Selected" Content="番剧管理"></ListBoxItem>
+            <ListBoxItem Selected="ListBoxItem_Selected" Content="番剧数据库"></ListBoxItem>
+        </ListBox>
+        <Frame MinWidth="980" x:Name="myFrame" Grid.Column="1" Source="pack://application:,,,/Pages/Statistics.xaml" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>

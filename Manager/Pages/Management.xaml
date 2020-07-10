@@ -1,0 +1,74 @@
+﻿<Page x:Class="Manager.Pages.Management"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Manager.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1000"
+      Title="Management">
+
+    <Grid Margin="15" Background="#e67e22">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="序号" Margin="15" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="AnimeId" FontSize="16" Margin="15" Padding="10" TextAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="3">
+            <TextBlock Text="动漫名称" Margin="15" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="AnimeName" FontSize="16" Margin="15" Padding="10" TextAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="发行时间" Margin="15" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="AnimeDate" FontSize="16" Margin="15" Padding="10" TextAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">
+            <TextBlock Text="分类" Margin="15" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="AnimeCategory" FontSize="16" Margin="15" Padding="10" TextAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="总话数" Margin="15" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="AnimeSets" FontSize="16" Margin="15" Padding="10" TextAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="原作" Margin="15" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="AnimeAuthor" FontSize="16" Margin="15" Padding="10" TextAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="3">
+            <TextBlock Text="动画制作" Margin="15" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="AnimeAnimation" FontSize="16" Margin="15" Padding="10" TextAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
+            <TextBlock Text="CAST" Margin="15" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="AnimeCast" FontSize="16" Margin="15" Padding="10" TextAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <Button Click="SearchButton_Click" Content="查找" FontSize="16" Grid.Row="4" Margin="15"></Button>
+        <Button Click="InsertButton_Click" Content="添加" FontSize="16" Grid.Row="4" Grid.Column="1" Margin="15"></Button>
+        <Button Click="UpdateButton_Click"  Content="修改" FontSize="16" Grid.Row="4" Grid.Column="2" Margin="15"></Button>
+        <Button Click="DeleteButton_Click" Content="删除" FontSize="16" Grid.Row="4" Grid.Column="3" Margin="15"></Button>
+
+    </Grid>
+</Page>
